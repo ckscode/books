@@ -1,0 +1,85 @@
+*{
+  font-family: "Poppins", sans-serif;
+
+}
+body{
+  background: rgb(58,194,140);
+  background: linear-gradient(180deg, rgba(58,194,140,1) 0%, rgba(0,93,156,1) 100%);
+  min-height:100vh;
+}
+a{
+  text-decoration: none;
+}
+
+.brand{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size:45px !important;
+  color:rgb(70, 63, 63)
+}
+
+nav{
+  background-color: #3ac28c;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.head{
+  color:rgb(70, 63, 63)
+}
+.button{
+  width:5em
+}
+
+.form{
+  width:30%;
+  margin:auto;
+  /* margin-left:auto;
+  margin-right:auto; */
+  background-color: rgb(246, 251, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  padding:3%;
+  padding-top: 2%;
+ margin-top: 5%;
+ border-radius:20px;
+}
+
+.form-background{
+    height:100em;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.card{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background-color: rgb(248, 251, 253);
+  border-radius: 13px;
+  border:none
+}
+
+@media screen and (max-width:1500px){
+  .form{
+    width:40%
+  }
+}
+
+@media screen and (max-width:1200px){
+  .form{
+    width:50%
+  }
+}
+
+@media screen and (max-width:976px){
+  .form{
+    width:70%
+  }
+}
+
+@media screen and (max-width:576px){
+  .form{
+    width:90%
+  }
+}
