@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg py-0 ">
         <div className="container-fluid">
-          <a className="navbar-brand mx-auto brand" href="/">Library</a>
+          <a className="navbar-brand mx-auto brand" href="/">Library Management</a>
         </div>
       </nav>
     );
