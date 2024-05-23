@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 const CreateBook = () => {
@@ -37,7 +37,7 @@ const CreateBook = () => {
       try {
         await axios
           .post("https://6642ef123c01a059ea20db85.mockapi.io/api/books", values)
-          .then((e) => console.log(e.data));
+          .then((e) => console.log('Book record created'));
         navigate("/");
       } catch (error) {
         console.log(error);

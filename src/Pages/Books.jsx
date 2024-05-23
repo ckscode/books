@@ -16,7 +16,6 @@ const Books = () => {
         .get("https://6642ef123c01a059ea20db85.mockapi.io/api/books")
         .then((e) => {
           setData(e.data);
-          console.log(data);
         });
     } catch (error) {
       console.log(error);

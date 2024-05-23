@@ -5,7 +5,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const Author = () => {
   const { id } = useParams();
-  console.log(id);
   const [data, setData] = useState([]);
   const [authorData, setAuthor] = useState();
   const navigate = useNavigate();
@@ -22,9 +21,10 @@ const Author = () => {
   useEffect(() => {
     setAuthor(data.filter((e) => e.id === id));
   }, [data]);
-  console.log(authorData);
+
   return (
     <div className="form-background ">
+      <h2 className="text-center pt-5 m-0">Author Details</h2>
       <div className="form pb-3">
         {authorData &&
           authorData.map((ele, index) => {

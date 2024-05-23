@@ -19,7 +19,6 @@ const EditBook = () => {
       .get(`https://6642ef123c01a059ea20db85.mockapi.io/api/books/${id}`)
       .then((res) => {
         setData(res.data);
-        console.log(data1);
       })
       .catch((error) => console.log(error));
   };

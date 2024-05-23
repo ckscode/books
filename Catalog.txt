@@ -1,0 +1,20 @@
+1.To Add Book
+Click the "ADD BOOK" button in the top left corner right under the Navbar
+to add a new book record.Fill the form and click the related button for the function you want to perform,
+A new "Card" with book details and Buttons to "Add Author","Edit" and "Delete" will be created
+
+2.To Edit Book
+Click the "Edit" button on the Card created and Edit with the form accordingly
+
+3.To Delete Book
+Click the "Delete" button near the "Edit" button in the Card
+
+3.To Add Author(if not Added)
+Click the "Add Author" Button under the Book title and fill the Author details in the form and submit it
+
+4.To Edit Author
+Click on the Author name which is under the Book Title which takes you to see the Author details.
+If you want to edit it,Click the "Edit" button to go to the edit form.
+
+5.To Delete Author
+Click the "Delete" button in the Author details page
