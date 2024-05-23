@@ -1,14 +1,11 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { thisId } from "../App";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Books = () => {
-    const {setId} = useContext(thisId);
   const [data, setData] = useState();
   const [deleteData, setDelete] = useState(true);
   const navigate = useNavigate();
-  const [authorData, setAuthor] = useState();
   useEffect(() => {
     fetchData();
   }, [deleteData]);
@@ -39,10 +36,10 @@ const Books = () => {
     navigate(`/edit/${e}`);
   };
 
-  const getAuthor = (e) =>{
-    navigate(`/author/${e}`)
+  const getAuthor = (e) => {
+    navigate(`/author/${e}`);
   };
- 
+
   return (
     <div className="py-4">
       <button
@@ -69,9 +66,9 @@ const Books = () => {
                           <button
                             className=" fw-bold text-success fst-italic btn"
                             onClick={(e) => {
-                                e.preventDefault();
-                              setId(ele.id);
-                             getAuthor(ele.id)
+                              e.preventDefault();
+
+                              getAuthor(ele.id);
                             }}
                           >
                             {ele.author}
@@ -81,7 +78,7 @@ const Books = () => {
                         <button
                           onClick={(e) => {
                             e.preventDefault();
-                            setId(ele.id);
+
                             navigate(`/createauthor/${ele.id}`);
                           }}
                           className="btn btn-info py-0"
@@ -100,7 +97,6 @@ const Books = () => {
                       <button
                         className="btn btn-outline-info button me-2 py-0"
                         onClick={() => {
-                          setId(ele.id);
                           editBook(ele.id);
                         }}
                       >
@@ -115,7 +111,6 @@ const Books = () => {
                     </div>
                   </div>
                 </div>
-               
               </div>
             );
           })}

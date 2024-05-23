@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import * as Yup from "yup";
-import { thisId } from "../App";
+
 const EditAuthor = () => {
-  const {id} = useContext(thisId)
-    const [data1, setData] = useState([]);
+  const { id } = useParams();
+  const [data1, setData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,10 +14,13 @@ const EditAuthor = () => {
   }, []);
 
   const fetchData = async () => {
-    await axios.get(`https://6642ef123c01a059ea20db85.mockapi.io/api/books/${id}`) .then((res) => {
+    await axios
+      .get(`https://6642ef123c01a059ea20db85.mockapi.io/api/books/${id}`)
+      .then((res) => {
         setData(res.data);
         console.log(data1);
-      }).catch((error)=>console.log(error))
+      })
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -57,32 +60,31 @@ const EditAuthor = () => {
     },
   });
 
-  const deleteAuthor = async(e) =>{
-    e.preventDefault()
-    try{
+  const deleteAuthor = async (e) => {
+    e.preventDefault();
+    try {
       await axios
-      .put(
-        `https://6642ef123c01a059ea20db85.mockapi.io/api/books/${id}`,
-        {
-          author:"",
-          birthdate:"",
-          bio:""
-        }
-      )
-      .then((e) => console.log(e.data));
-    navigate("/");
+        .put(`https://6642ef123c01a059ea20db85.mockapi.io/api/books/${id}`, {
+          author: "",
+          birthdate: "",
+          bio: "",
+        })
+        .then((e) => console.log(e.data));
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
-    formik.author=""
-    console.log(formik.values)
-  }
+    formik.author = "";
+    console.log(formik.values);
+  };
   return (
     <div className="form-background">
       <div className="form">
-        <h1>Edit Author details of <span className="fst-italic">{data1.title}</span></h1>
+        <h1>
+          Edit Author details of{" "}
+          <span className="fst-italic">{data1.title}</span>
+        </h1>
         <form onSubmit={formik.handleSubmit}>
-    
           <div className="mb-3">
             <label htmlFor="exampleFormControlInput1" className="form-label">
               Name
@@ -127,23 +129,22 @@ const EditAuthor = () => {
             <label className="text-danger">{formik.errors.bio}</label>
           </div>
           <div className="w-100 d-flex">
-          <button type="submit" className="btn btn-success button">
-            Okay
-          </button>
-          <button
-            onClick={() => navigate("/")}
-            className="btn btn-outline-danger ms-3"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={deleteAuthor}
-            className="btn btn-outline-danger ms-auto"
-          >
-            Delete 
-          </button>
+            <button type="submit" className="btn btn-success button">
+              Okay
+            </button>
+            <button
+              onClick={() => navigate("/")}
+              className="btn btn-outline-danger ms-3"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={deleteAuthor}
+              className="btn btn-outline-danger ms-auto"
+            >
+              Delete
+            </button>
           </div>
-        
         </form>
       </div>
     </div>
